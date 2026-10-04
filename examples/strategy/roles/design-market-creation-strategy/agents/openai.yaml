@@ -1,0 +1,4 @@
+interface:
+  display_name: "Strategy · Market Creation"
+  short_description: "Design testable market-creation hypotheses"
+  default_prompt: "Use $design-market-creation-strategy to redesign market boundaries and value factors as a testable hypothesis."

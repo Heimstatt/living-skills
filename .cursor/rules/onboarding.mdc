@@ -1,0 +1,173 @@
+---
+description: Living Skills self-onboarding — run this when setting up for the first time or when no instance config exists yet
+alwaysApply: true
+---
+
+# Living Skills — Agent Onboarding
+
+## Check First: Am I already configured?
+
+Check whether your global identity is set up:
+
+```bash
+cat ~/.cursor/rules/identity.mdc 2>/dev/null || echo "NOT CONFIGURED"
+```
+
+**If the file exists and contains your name** — onboarding is done. Skip to **Already Configured** below.
+
+**If not found** — run through the onboarding steps below.
+
+---
+
+## Why Identity Lives Outside the Repo
+
+Your identity is **yours** — it belongs to your machine, not this repository.
+
+This follows the same principle as Git:
+```
+git config --global user.name "Your Name"   ← per machine, not per repo
+```
+
+If identity lived inside the repo, every Cursor instance opening this repo
+would assume the same identity. That breaks the team model.
+
+Instead:
+- `~/.cursor/rules/identity.mdc` → **who you are** (per machine, global)
+- `.cursor/rules/living-skills.mdc` → **how to use Living Skills** (shared, in repo)
+- `Team Memory/<your-name>/` → **your working area** (in repo, written by you)
+
+---
+
+## Onboarding Steps (first-time setup)
+
+Work through these in order. Ask the user each question before proceeding.
+
+### Step 1 — Your Name
+
+Ask the user:
+> "What should I call you in this team? This becomes your folder name in Team Memory
+> and appears in all commit messages.
+> Use something that identifies you + your tool, e.g.:
+> `cursor-alex`, `cursor-sarah`, `claude-desktop`, `codex-work`"
+
+Use the answer as `<instance-name>` throughout.
+
+### Step 2 — Other Team Members
+
+Ask the user:
+> "Who else is working in this repo? (other people, other machines, other AI tools?)
+> List their instance names if you know them — those become read-only folders for you."
+
+### Step 3 — Git Remote
+
+Run: `git remote -v`
+
+Show the output and ask:
+> "This is where I'll push commits. Is this the right remote and branch?"
+
+### Step 4 — Language
+
+Ask the user:
+> "What language should I use for documentation and explanations?
+> (Code and commit messages stay in English regardless.)"
+
+### Step 5 — Skills Location
+
+Check where skills live in this repo:
+```bash
+find . -name "SKILL.md" | grep -v ".git" | head -20
+```
+
+Note the path pattern for future sessions.
+
+### Step 6 — Write Your Global Identity File
+
+Create `~/.cursor/rules/identity.mdc`:
+
+```markdown
+---
+description: My identity in Living Skills team repos — who I am, where I write
+alwaysApply: true
+---
+
+# Identity — <instance-name>
+
+I am **<instance-name>** — Cursor IDE used by <your name> on <this machine>.
+
+## Write Boundaries
+
+- Write only to: `Team Memory/<instance-name>/`
+- Other instances' folders: read-only (never write, even if a task seems to require it)
+- Shared areas (skills/, shared/): contribute freely
+
+## Git
+
+- Commit format: `<instance-name>: <description> [YYYY-MM-DD]`
+- Remote: <from Step 3>
+
+## Language
+
+<from Step 4>
+
+## Skills Location
+
+<pattern from Step 5>
+```
+
+### Step 7 — Create Your Team Memory Folder
+
+In the repo, create your working area:
+
+```bash
+mkdir -p "Team Memory/<instance-name>"
+```
+
+Create `Team Memory/<instance-name>/config.md`:
+
+```markdown
+# <instance-name> — Working Notes
+
+**Identity:** <instance-name> — see ~/.cursor/rules/identity.mdc for full config
+
+## Teammates (read-only)
+<list from Step 2>
+```
+
+### Step 8 — Commit and Confirm
+
+```bash
+git add "Team Memory/<instance-name>/"
+git commit -m "<instance-name>: initial setup [YYYY-MM-DD]"
+```
+
+Ask the user whether to push.
+
+Tell the user: "Onboarding complete. Your identity is saved globally in
+`~/.cursor/rules/identity.mdc` — it will apply whenever you open any
+Living Skills team repo on this machine."
+
+---
+
+## Already Configured
+
+Your global identity file (`~/.cursor/rules/identity.mdc`) is loaded automatically.
+
+At session start:
+1. Run `git pull --rebase` and check `git log --oneline -5`
+2. **Check for new teammates** — run `ls "Team Memory/"` and compare with the teammates listed in your `~/.cursor/rules/identity.mdc`. If a new folder appears that you don't know yet:
+   - Note who joined the team
+   - Add them to your identity file under "Teammates (read-only)"
+   - Optionally: tell the user "I see a new teammate: `<name>` — added to my config"
+3. Read `living-checklist.md` for any skill you're about to use
+4. Proceed with the task
+
+---
+
+## Write Boundaries (always)
+
+- **Write only** to `Team Memory/<your-instance>/`
+- **Never write** to another instance's folder
+- `Team Memory/skills/` and shared areas: contribute freely
+
+The reason: each person documents what *they* did.
+If you write into someone else's folder, authorship breaks and memory becomes unreliable.

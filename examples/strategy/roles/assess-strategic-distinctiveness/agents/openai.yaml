@@ -1,0 +1,4 @@
+interface:
+  display_name: "Strategy · Strategic Distinctiveness"
+  short_description: "Challenge distinctiveness and defensibility claims"
+  default_prompt: "Use $assess-strategic-distinctiveness to pressure-test whether a concept is meaningfully distinctive and defensible."

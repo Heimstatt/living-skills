@@ -1,0 +1,4 @@
+interface:
+  display_name: "Strategy · Staff Lead"
+  short_description: "Route and integrate cross-functional strategy work"
+  default_prompt: "Use $strategy to route a strategic question to the right specialist and integrate the result."

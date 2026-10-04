@@ -1,0 +1,3 @@
+# One line per signing identity: <principal> <key-type> <public-key> [comment]
+# Example:
+# instance-a@example.invalid ssh-ed25519 AAAA...replace-with-your-public-key instance-a
