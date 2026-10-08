@@ -165,10 +165,10 @@ If none of these change over several sessions, the skill is decoration. Say so a
 
 ## Source
 
-Adapted from [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills)
-(MIT), which condenses [Andrej Karpathy's observations on LLM coding pitfalls](https://x.com/karpathy/status/2015883857489522876)
-into four principles. Three of them — *Simplicity First*, *Surgical Changes*,
-*Goal-Driven Execution* — are the substance of this skill.
+Adapted from [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills)
+(its README states MIT), which condenses [Andrej Karpathy's observations on LLM coding pitfalls](https://x.com/karpathy/status/2015883857489522876)
+into four principles. All four are in this skill: *Simplicity First*, *Surgical Changes*
+and *Goal-Driven Execution* as its substance, *Think Before Coding* as the ambiguity gate.
 
 What was added here: the principles were turned into a procedure with an auditable
 output. The scope contract makes the intended blast radius reviewable before the edit,

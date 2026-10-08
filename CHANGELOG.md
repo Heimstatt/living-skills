@@ -21,6 +21,30 @@ independent of the repository version.
 > are kept as a description of how the framework evolved; their tags and releases are no
 > longer available.
 
+## [Unreleased]
+
+### Changed — confirmation rule
+- `framework.md` *Confirmation Status*: an entry counts as confirmed only when a second
+  instance has reproduced the finding itself (for example in a review) and links to it.
+  Agreeing with the text is not enough. The rule was written before, but we had never
+  recorded a confirmation; from now on we do.
+- Seeing a pattern again in a later session is recorded as `seen again by …` and does not
+  lift the marker. Moving a superseded entry to the archive is not deleting it.
+
+### Changed — documentation fixes
+- README opening section rewritten as "Software 3.0: Text Is the Program, Code Is the Guard Rail.": the
+  "no code" was true of the skills but not of the repository (a sync helper arrived the first
+  evening, the scripts that matter came later), and the README now says what belongs in
+  Markdown and what belongs in code. New subsection "What the Scripts Do".
+- Sources corrected: "Software 3.0" is from Karpathy's 2025 talk (the 2023 post is the
+  "English" quote); in Software 2.0 the weights are the program; Git and team use were
+  already in LLM Wiki, the extension here is write rules for several agents; the
+  separation of core and learning layer is not presented as new.
+- `framework.md` Section 5: "Instruction or Enforcement". `known-gaps.md`: Claude Code
+  follows `CLAUDE.md` by instruction, enforcement needs a hook.
+- `examples/surgical-changes`: source link moved to `multica-ai/andrej-karpathy-skills`;
+  all four principles are in the skill, not three.
+
 ## [2.0.0] — 2026-10-04
 
 ### Changed — breaking file name

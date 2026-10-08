@@ -13,30 +13,45 @@ Every session starts with what your team already knows — across tools, models,
 
 ---
 
-## This Is a Software 3.0 Repository
+## Software 3.0: Text Is the Program, Code Is the Guard Rail.
 
 > *"The hottest new programming language is English."*
-> — [Andrej Karpathy](https://x.com/karpathy/status/1617979122625712128), 2023
+> — [Andrej Karpathy](https://x.com/karpathy/status/1617979122625712128), January 2023
 
-This repository contains no code. Every file is plain Markdown.
-And yet it is fully executable — by any LLM that can read.
+In 2017 Karpathy described Software 2.0: neural networks, where the trained weights are
+the program. In his 2025 talk
+["Software Is Changing (Again)"](https://www.youtube.com/watch?v=LCEmiRjPEtQ) he named the
+next step Software 3.0: prompts written in natural language that program a language model.
 
-Karpathy described three generations of software:
+Living Skills takes that literally. The `SKILL.md` files are programs. The
+`living-checklist.md` files are state. `TEAM.md` is the runtime configuration. Any agent
+that can read a file and run `git commit` can take part. There is no compiler and no
+runtime of our own.
 
-- **Software 1.0** — explicit instructions written in code by humans
-- **Software 2.0** — neural networks where data is the program
-- **Software 3.0** — natural language as the program, executed by LLMs
+**We once wrote that this repository contains no code.** That was true of the skills and
+never quite true of the repository: a small sync helper for our notes arrived the same
+evening, and the scripts that matter came later, wherever a step had to be exact. We kept running into steps that had
+to happen exactly the same way every time: mapping skills into the folder where a tool
+looks for them, mirroring files into a note-taking vault without losing edits. An
+instruction can describe such a step. It cannot guarantee it. So the scripts stayed, and
+we learned what belongs where:
 
-Living Skills is a Software 3.0 system. The `SKILL.md` files are programs.
-The `living-checklist.md` files are state. `TEAM.md` is the runtime configuration.
-No compilation step. No language runtime. No vendor dependency.
+| | Markdown | Code |
+|---|---|---|
+| Good for | anything that needs judgement | anything that must happen the same way every time |
+| Read by | every agent and every human on the team | the machine |
+| Changed by | the agents through use (checklists); deliberately, with a log (skills) | a human, on purpose |
+| Fails by | being skipped or misread | stopping with an error |
 
-If your agent can read a file and run `git commit`, it can run this system.
+**The rule we follow:** if a step needs intelligence, write it down. If it only needs a
+rule, script it. If it must never be skipped, enforce it.
 
-The key extension beyond Karpathy's [AutoResearch](https://github.com/karpathy/autoresearch)
-(where a human writes `program.md` and the model executes it): here, **the model
-writes back**. The programs improve through use. The system gets smarter every session —
-without a human editing the source.
+An instruction in Markdown is followed reliably by a capable agent, and it is still an
+instruction, not a guarantee. See [Known Gaps](known-gaps.md) for where we learned that.
+
+What changes compared with a prompt that a human writes and a model executes: here,
+**the model writes back**. The checklists grow through use. The guard rails do not; no
+agent edits them as part of its work.
 
 ---
 
@@ -287,19 +302,19 @@ Living Skills is a synthesis and extension of existing ideas:
 
 | Concept | Source / Origin | How it appears here | Note |
 |---------|----------------|---------------------|------|
-| Software 3.0 paradigm | [Karpathy, 2023](https://x.com/karpathy/status/1617979122625712128) | Markdown as executable program | Foundational framing |
+| Software 3.0 paradigm | [Karpathy, 2025 talk](https://www.youtube.com/watch?v=LCEmiRjPEtQ) (term); [2023 post](https://x.com/karpathy/status/1617979122625712128) ("English" quote) | Markdown as executable program | Foundational framing |
 | Skill format | Anthropic Skills | SKILL.md structured definitions | Direct inspiration |
 | External knowledge in files | Karpathy LLM Wiki | Markdown-based knowledge | Direct inspiration |
 | Iterative improvement | Karpathy Autoresearch | Learning through execution | High-level influence |
 | Iteration loop + stopping | Ralph Loop | Explicit iteration with stop criteria | Correct attribution |
 | Learning layer | Autoresearch + this project | living-checklist.md | Extended + structured |
-| Core vs learning separation | Anthropic + Autoresearch (synthesis) | Skill vs checklist | Key contribution |
-| Multi-instance via Git | Extension of LLM Wiki (this project) | Git coordination layer | Core extension |
+| Core vs learning separation | Known elsewhere (e.g. instructions vs. model-written notes in Claude Code's docs) | Skill vs checklist, one learning file per procedure in a shared repo, changes to the core logged | Our arrangement, not a new idea |
+| Multi-instance via Git | Karpathy LLM Wiki (Git and team use) | Rules for several agents writing to one repo | Extended: write rules for multiple agents |
 | Versioned knowledge | Software engineering practice | Git history, diffs, rollback | Borrowed discipline |
 | Corroboration before belief | [allexp1/living-skills](https://github.com/allexp1/living-skills) (source tiering) | `unconfirmed` → confirmed entries | Adapted: sources → instances |
-| Selective evolution | [allexp1/living-skills](https://github.com/allexp1/living-skills) | `living-checklist: yes\|no` | Direct adoption |
+| Selective evolution | [allexp1/living-skills](https://github.com/allexp1/living-skills) (idea) | `living-checklist: yes\|no` (our field) | Adapted |
 | Honest staleness | [allexp1/living-skills](https://github.com/allexp1/living-skills) (K4) | `Knowledge checked` line in activation output | Adopted for domain skills only |
-| Scope discipline for code edits | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills), from [Karpathy on LLM coding pitfalls](https://x.com/karpathy/status/2015883857489522876) | `examples/surgical-changes` | Content source for one example, not a framework concept — principles turned into an auditable procedure |
+| Scope discipline for code edits | [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills), from [Karpathy on LLM coding pitfalls](https://x.com/karpathy/status/2015883857489522876) | `examples/surgical-changes` | Content source for one example, not a framework concept — principles turned into an auditable procedure |
 
 ---
 
@@ -408,6 +423,23 @@ See [setup/agent-configuration.md](setup/agent-configuration.md) for details.
 **Important:** This framework does not replace good Git hygiene — it assumes it.
 Pulling before a session and committing after remain human (or enforced-hook) responsibilities.
 The framework provides structure; it does not provide enforcement.
+
+### What the Scripts Do
+
+Everything under `scripts/` exists because one step had to be exact. (Two older scripts
+under `Infrastructure/skills/siyuan/scripts/` belong to a domain skill that is no longer
+maintained.)
+
+- `generate-claude-skills.sh` and `generate-cursor-rules.sh` / `.ps1` map the skills in
+  this repository into the places where a specific tool looks for them. The tool's lookup
+  path is fixed; an instruction cannot change it.
+- `sync-obsidian-mirror.py` and `sync-obsidian-git.sh` mirror Markdown between the
+  repository and a note-taking vault without losing edits on either side. Comparing
+  hashes and timestamps is a job for a program.
+
+None of them contains knowledge about how to do the team's work. That stays in the
+skills. If you find yourself putting judgement into a script, or a hard guarantee into a
+sentence, it is in the wrong place.
 
 ---
 

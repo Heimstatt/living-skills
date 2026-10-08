@@ -108,8 +108,8 @@ arrived at the same name independently of this one; the two are unrelated in ori
 and differ in approach.
 Individual examples may have their own sources, credited in the `## Source` section of
 their `SKILL.md` and listed in the README's *Intellectual Foundation* table —
-`examples/surgical-changes` is adapted from Forrest Chang's
-[andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills).
+`examples/surgical-changes` is adapted from
+[andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills).
 We believe in crediting sources clearly. If your contribution builds on other
 published work, mention it.
 

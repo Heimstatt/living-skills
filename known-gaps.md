@@ -78,6 +78,10 @@ and supports content comparison before write. Contributions welcome.
 
 ## Cursor Does Not Reliably Execute Session Rituals
 
+> This gap is one instance of a general point: instructions are not guarantees.
+> See "Software 3.0: Text Is the Program, Code Is the Guard Rail." in the README and
+> "Instruction or Enforcement" in framework.md.
+
 > Cursor: not actively tested in recent releases; generator kept for reference.
 
 **Status:** Known limitation — no solution at the framework level
@@ -86,8 +90,9 @@ and supports content comparison before write. Contributions welcome.
 session rituals (pull before starting, commit after finishing) with the same reliability
 as Claude Code.
 
-Claude Code executes `CLAUDE.md` before every response — it cannot skip the instructions
-without violating its own context. Cursor has no equivalent lifecycle hook. The rules
+Claude Code loads `CLAUDE.md` as context on every session and follows it reliably in
+practice. That is instruction-following, not enforcement; enforcement needs a hook.
+Cursor has no equivalent lifecycle hook. The rules
 are loaded as guidelines, not enforced pre/post-conditions.
 
 As a result, Cursor can start work without pulling first and complete sessions without

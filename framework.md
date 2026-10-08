@@ -105,13 +105,20 @@ A learning drawn from a single session is a hypothesis. A learning that a *diffe
 instance hit independently is a pattern. The format distinguishes the two.
 
 - A new entry is marked `*unconfirmed (1 observation)*` in its heading.
-- When another instance encounters the same pattern, it **removes the marker** and
-  appends itself to `Observed by:` — it does not open a second entry.
-- Unconfirmed entries never expire and are never deleted (see *Growth*). The marker is
-  information about the evidence, not a countdown.
+- An entry counts as confirmed when a **second instance has reproduced the finding
+  itself**, for example in a review, and links to that review. Agreeing with the text is
+  not enough. The confirming instance **removes the marker** and appends itself, with
+  the link, to `Observed by:` — it does not open a second entry.
+- Seeing the pattern again is not the same as reproducing it. If the same or another
+  instance merely meets the pattern again in a later session, it notes that in
+  `Observed by:` as `seen again by …`. The marker stays until someone has reproduced the
+  finding.
+- Unconfirmed entries never expire and are never deleted (see *Growth*). Moving a superseded
+  entry to the archive section is not deleting it. The marker is information about the
+  evidence, not a countdown.
 
 ```markdown
-**Observed by:** instance-a (YYYY-MM-DD), confirmed by instance-b (YYYY-MM-DD)
+**Observed by:** instance-a (YYYY-MM-DD), confirmed by instance-b (YYYY-MM-DD, [review](link))
 ```
 
 **This status is optional.** Many teams verify before writing, through review and
@@ -258,6 +265,23 @@ Every use ends with:
 
 **If nothing new was learned:** No entry required. An empty session is better
 than a meaningless entry.
+
+### Instruction or Enforcement
+
+The rituals in this section are instructions. A capable agent follows them, and nothing
+stops it from skipping one. Decide per ritual which of three levels you need:
+
+1. **Instruction** — the ritual is written in the team charter. Enough for a single
+   instance, or when a skipped step is cheap to repair.
+2. **Reminder** — a human checks at session start and end. Needed for tools without
+   lifecycle hooks.
+3. **Enforcement** — a hook or script runs the step (for example a `SessionStart` hook
+   running `git pull`, see Section 7). Use this when several instances write to the same
+   repository and a skipped pull blocks the next session.
+
+Rule of thumb: move a step one level up the first time skipping it has cost you real
+work. Do not start at level 3 for everything; each enforced step is code someone has to
+maintain.
 
 ---
 
