@@ -311,9 +311,9 @@ Living Skills is a synthesis and extension of existing ideas:
 | Core vs learning separation | Known elsewhere (e.g. instructions vs. model-written notes in Claude Code's docs) | Skill vs checklist, one learning file per procedure in a shared repo, changes to the core logged | Our arrangement, not a new idea |
 | Multi-instance via Git | Karpathy LLM Wiki (Git and team use) | Rules for several agents writing to one repo | Extended: write rules for multiple agents |
 | Versioned knowledge | Software engineering practice | Git history, diffs, rollback | Borrowed discipline |
-| Corroboration before belief | [allexp1/living-skills](https://github.com/allexp1/living-skills) (source tiering) | `unconfirmed` → confirmed entries | Adapted: sources → instances |
+| Corroboration before belief | [allexp1/living-skills](https://github.com/allexp1/living-skills) (trust tiers: a secondary claim is logged as unconfirmed until a primary source corroborates it) | `unconfirmed` marker on checklist entries (optional since 2.0.0) | Adapted: the entry is written at once and the marker records the evidence; corroboration means a second observer, not a second document |
 | Selective evolution | [allexp1/living-skills](https://github.com/allexp1/living-skills) (idea) | `living-checklist: yes\|no` (our field) | Adapted |
-| Honest staleness | [allexp1/living-skills](https://github.com/allexp1/living-skills) (K4) | `Knowledge checked` line in activation output | Adopted for domain skills only |
+| Honest staleness | [allexp1/living-skills](https://github.com/allexp1/living-skills) (K4: state the knowledge age when a refresh was skipped, part of a staleness gate and refresh procedure) | `Knowledge checked` line (date and system) in the activation output of domain skills | Adapted, narrower: no staleness gate, no refresh procedure |
 | Scope discipline for code edits | [andrej-karpathy-skills](https://github.com/multica-ai/andrej-karpathy-skills), from [Karpathy on LLM coding pitfalls](https://x.com/karpathy/status/2015883857489522876) | `examples/surgical-changes` | Content source for one example, not a framework concept — principles turned into an auditable procedure |
 
 ---
