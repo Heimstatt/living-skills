@@ -1,8 +1,10 @@
 ---
-name: "Siyuan Knowledge Base"
+name: siyuan
 description: "Use for ANY Siyuan setup, configuration, or sync work — connecting Siyuan to a Living Skills repo, MCP setup, API access, notebook structure, Git sync. Trigger: 'Siyuan', 'knowledge base', 'LLM wiki', 'sync to knowledge base'."
-type: "domain"
-living-checklist: "yes"
+compatibility: "Needs network access to your own Siyuan instance (SIYUAN_URL and token from .env); scripts use bash and curl."
+metadata:
+  type: "domain"
+  living-checklist: "yes"
 ---
 
 # Siyuan Knowledge Base — Living Skill

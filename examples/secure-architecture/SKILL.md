@@ -1,8 +1,9 @@
 ---
-name: "Secure Architecture"
+name: secure-architecture
 description: "Procedure for auditing authorization models during system design. Trigger: designing authentication/authorization, reviewing 'who can do what', any requirement containing 'only X should be allowed to Y', 'separation of duties', '2FA for sensitive actions', or when someone suggests routing a permission through a data field (email, name, flag)."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Secure Architecture — Authorization Design Checklist

@@ -1,9 +1,11 @@
 ---
-name: "<Skill name, max 64 characters>"
+# name: rename to this skill's folder name (lowercase, digits, hyphens, max. 64)
+name: behavioral-skill
 description: "<What it does + when to trigger — specific and pushy, max 200 characters>"
-type: "behavioral"
-living-checklist: "yes"
-checklist-rationale: "<one line — required only when 'no'>"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
+  checklist-rationale: "<one line — required only when 'no'>"
 ---
 
 # <Name>

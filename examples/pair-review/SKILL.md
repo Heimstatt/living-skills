@@ -1,8 +1,9 @@
 ---
-name: "Pair Review (Cross-Model Code Review)"
+name: pair-review
 description: "Cross-model code review between team instances (e.g. a Codex instance reviews Claude-built code, or vice versa): structured findings, mandatory critical response with documented dispute, re-review against a named commit. Trigger: 'review the repo', 'respond to the review', a new Code-Review file appears in a project folder, or a builder instance finishes a milestone that needs independent eyes. NOT the built-in /code-review command — this is the team protocol around it."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Pair Review — Cross-Model Code Review

@@ -1,9 +1,11 @@
 ---
-name: "<Domain name>"
+# name: rename to this skill's folder name (lowercase, digits, hyphens, max. 64)
+name: domain-skill
 description: "<What it covers + when to trigger — specific and pushy, max 200 characters>"
-type: "domain"
-living-checklist: "yes"
-checklist-rationale: "<one line — required only when 'no'>"
+metadata:
+  type: "domain"
+  living-checklist: "yes"
+  checklist-rationale: "<one line — required only when 'no'>"
 ---
 
 # <Domain Name> — Living Skill

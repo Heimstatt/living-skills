@@ -1,8 +1,9 @@
 ---
-name: "Playwright"
+name: playwright
 description: "Operational skill for browser automation and visual UI inspection with playwright-cli. Trigger: 'playwright', 'inspect live', 'automate browser', 'validate screenshot', 'visually check page'."
-type: "domain"
-living-checklist: "yes"
+metadata:
+  type: "domain"
+  living-checklist: "yes"
 ---
 
 # Playwright — Operational Skill

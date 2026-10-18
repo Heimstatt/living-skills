@@ -1,8 +1,9 @@
 ---
-name: "Skill Creator (Team Edition)"
+name: skill-creator
 description: "Creates new Living Skills for the team. Trigger: 'create a new skill', 'turn this workflow into a skill', 'build a skill for X', 'set up X as a skill'."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Skill Creator — Team Edition
@@ -66,10 +67,11 @@ case-insensitive filesystems, never create both side by side.
 **Frontmatter:**
 ```yaml
 ---
-name: "<Name>"
+name: <folder-name>  # = folder name: lowercase, digits, hyphens, max. 64 (agentskills.io)
 description: "<What the skill does + when it triggers — concrete and 'pushy', max. 200 characters>"
-type: "behavioral | domain"
-living-checklist: "yes | no"
+metadata:
+  type: "behavioral | domain"
+  living-checklist: "yes | no"
 ---
 ```
 

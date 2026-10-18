@@ -1,8 +1,9 @@
 ---
-name: "Advocatus Diaboli"
+name: advocatus-diaboli
 description: "Iterative adversarial review: dismantles assumptions, finds counterarguments, accumulates learnings across sessions. Use for ANY critical analysis — strategy, architecture, plans, documents."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Advocatus Diaboli — Iterative Adversarial Review

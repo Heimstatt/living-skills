@@ -23,6 +23,15 @@ independent of the repository version.
 
 ## [Unreleased]
 
+### Changed — frontmatter follows the Agent Skills specification
+- `SKILL.md` frontmatter now matches [agentskills.io/specification](https://agentskills.io/specification):
+  `name` is the folder name (`surgical-changes`, not "Surgical Changes"), and the Living
+  Skills fields `type`, `living-checklist` and `checklist-rationale` moved under `metadata`.
+  All examples, both templates, `framework.md` Section 2 and the skill-creator template are
+  updated. Existing skills with the old form keep working in Claude Code; strict validators
+  such as `skills-ref validate` reject them.
+- `siyuan` declares its network access in the optional `compatibility` field.
+
 ### Changed — confirmation rule
 - `framework.md` *Confirmation Status*: an entry counts as confirmed only when a second
   instance has reproduced the finding itself (for example in a review) and links to it.
