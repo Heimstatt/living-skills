@@ -1,6 +1,9 @@
 ---
 name: strategy
 description: "Lead cross-functional strategy work as a shared staff function: diagnose the strategic question, route it to a staffed specialist, and integrate the result without taking ownership of Venture, Product, Marketing, or Sales. Use for market-boundary redesign, value innovation, strategic distinctiveness, defensibility, competitive logic, or when another department needs an independent strategy advisory."
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Strategy Staff Function
