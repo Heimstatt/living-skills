@@ -1,8 +1,9 @@
 ---
-name: "Home Assistant"
+name: home-assistant
 description: "Use for ANY Home Assistant work — debugging automations, adding new automations, entity configuration, integration setup, updates. Trigger: 'Home Assistant', 'HA automation', 'Zigbee', 'smart home', entity names."
-type: "domain"
-living-checklist: "yes"
+metadata:
+  type: "domain"
+  living-checklist: "yes"
 ---
 
 # Home Assistant — Living Skill

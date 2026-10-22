@@ -34,13 +34,21 @@ A directory missing any of them is not a Living Skill.
 
 ```yaml
 ---
-name: "<Human-readable name, max 64 characters>"
+name: <folder-name>
 description: "<What the skill does AND when to trigger it — specific, max 200 characters>"
-type: "behavioral | domain"
-living-checklist: "yes | no"
-checklist-rationale: "<one line — required only when 'no'>"
+metadata:
+  type: "behavioral | domain"
+  living-checklist: "yes | no"
+  checklist-rationale: "<one line — required only when 'no'>"
 ---
 ```
+
+**On `name` and `metadata`:** The frontmatter follows the open
+[Agent Skills specification](https://agentskills.io/specification), so the skills load in
+any tool that reads the format. `name` is the folder name (lowercase letters, digits and
+hyphens, max. 64 characters); the human-readable title goes in the `# Heading`. Living
+Skills' own fields sit under `metadata`. A skill with scripts or network access says so in
+the optional `compatibility` field.
 
 **On description:** Write "pushy" — AI models tend to undertrigger skills.
 Instead of: "Helps with debugging automations"

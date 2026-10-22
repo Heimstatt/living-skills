@@ -1,6 +1,9 @@
 ---
 name: assess-strategic-distinctiveness
 description: Pressure-test whether a business, product, or strategy concept is meaningfully distinctive, independently reasoned, distributable, defensible, and durable. Use when a team claims it is creating something new, escaping competition, has a contrarian insight or unfair advantage, or wants a declared Zero to One lens applied without treating that lens as proof of viability.
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Assess Strategic Distinctiveness

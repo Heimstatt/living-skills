@@ -1,8 +1,9 @@
 ---
-name: "Token-Aware Developer Brief"
+name: token-optimization
 description: "Structured planning before any non-trivial task: context budget, knowledge reuse, sub-agent strategy, output compression. Use proactively when a task will consume >10K tokens, involve sub-agents, or use multiple tools."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Token-Aware Developer Brief — Living Skill

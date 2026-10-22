@@ -1,6 +1,9 @@
 ---
 name: design-market-creation-strategy
 description: Design a testable market-creation and value-innovation hypothesis from a defined current market or search space. Use when existing competing factors may be taken for granted, noncustomers or buyer utility reveal alternative demand, or a team wants to explore differentiation and lower cost together using a declared Blue Ocean Strategy lens.
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Design Market Creation Strategy

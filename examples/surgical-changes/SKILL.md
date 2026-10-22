@@ -1,8 +1,9 @@
 ---
-name: "Surgical Changes"
+name: surgical-changes
 description: "Scope contract before the edit, hunk-by-hunk diff audit after. Use for ANY change to existing code — implement, fix, refactor, add a feature, before a PR, or when asked 'why did you change that?'."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Surgical Changes — Traceable Edits to Existing Code

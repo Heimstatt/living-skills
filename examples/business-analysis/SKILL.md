@@ -1,8 +1,9 @@
 ---
-name: "Business Analysis"
+name: business-analysis
 description: "BABOK/CBAP-oriented business analysis procedure. Trigger: 'create a requirements doc', 'document stakeholders', 'write user stories', 'what are the requirements for X', 'gap analysis', 'risk register', building a new product or feature from scratch, onboarding into a new domain."
-type: "behavioral"
-living-checklist: "yes"
+metadata:
+  type: "behavioral"
+  living-checklist: "yes"
 ---
 
 # Business Analysis — BABOK/CBAP Procedure
