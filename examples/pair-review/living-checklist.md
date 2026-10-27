@@ -21,6 +21,7 @@
 **Insight:** [What was learned]
 **Why it matters:** [Context]
 **Rule:** [Concrete heuristic for the next session]
+**Evidence:** [commit, issue or PR where it happened]
 ```
 
 ---

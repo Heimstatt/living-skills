@@ -136,7 +136,7 @@ Done when **all** hold:
 ## Session End
 
 1. New patterns into `living-checklist.md` in the format required by `framework.md` §3
-   (`unconfirmed` marker, `Observed by:`).
+   (`unconfirmed` marker, `Evidence:`, `Observed by:`).
 2. Update `revisionslog.md` only if this `SKILL.md` itself changed.
 3. Commit.
 

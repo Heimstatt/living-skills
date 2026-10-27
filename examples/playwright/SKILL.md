@@ -108,4 +108,5 @@ Format:
 **Pattern found:** [What went wrong or was surprising]
 **Why overlooked:** [Structural reason]
 **Check:** [Concrete question for future sessions]
+**Evidence:** [commit, issue or PR where it happened]
 ```

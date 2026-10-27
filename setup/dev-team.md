@@ -31,6 +31,7 @@ knowledge-base sync. All of that is optional and described elsewhere in `setup/`
 
 1. **Create a team repository** (internal Git server is fine) and copy the structure:
    ```bash
+   TEAM_REMOTE="https://git.example.com/your-team/team-skills.git"   # replace with your remote
    git clone https://github.com/Heimstatt/living-skills.git team-skills
    cd team-skills
    mkdir -p "Team Memory/skills"
@@ -39,7 +40,7 @@ knowledge-base sync. All of that is optional and described elsewhere in `setup/`
      cp -r "examples/$s" "Team Memory/skills/$s"
    done
    mkdir -p Infrastructure/skills && cp -r examples/playwright Infrastructure/skills/playwright
-   git remote set-url origin <your-internal-remote>
+   git remote set-url origin "$TEAM_REMOTE"
    ```
 2. **Write `TEAM.md`** from [`templates/TEAM.md`](../templates/TEAM.md): team name, the repository
    layout, session start and end, and a skill register (one row per skill with "when to use").

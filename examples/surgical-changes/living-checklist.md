@@ -23,6 +23,7 @@ Only change it when the procedure itself needs revision. Application experience 
 **Learning:** What was overlooked or went wrong
 **Why it matters:** Structural reason it was missed
 **Rule:** Concrete check for the next session
+**Evidence:** <commit, issue or PR where it happened>
 **Observed by:** <instance> (YYYY-MM-DD)
 ```
 

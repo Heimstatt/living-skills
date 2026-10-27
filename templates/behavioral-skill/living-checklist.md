@@ -12,6 +12,7 @@ in this specific context. Grows with every session. Never merged back into SKILL
 **Learning:** What was discovered / what failed
 **Why it matters:** Context and consequences
 **Rule:** Concrete actionable guideline for future sessions
+**Evidence:** <commit, issue or PR where it happened>
 **Observed by:** <instance> (YYYY-MM-DD)
 ```
 

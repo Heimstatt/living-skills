@@ -14,6 +14,7 @@ Grows with every session. Never merged back into SKILL.md.
 **Learning:** What pattern was found / what failed
 **Why it matters:** Structural reason it was missed
 **Rule:** Concrete check to apply in future sessions
+**Evidence:** <commit, issue or PR where it happened>
 **Observed by:** <instance> (YYYY-MM-DD)
 ```
 

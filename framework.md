@@ -104,8 +104,12 @@ Every entry follows exactly this format:
 **Learning:** What was discovered / what failed
 **Why it matters:** Context and consequences
 **Rule:** Concrete actionable guideline for future sessions
+**Evidence:** <commit, issue or PR where it happened>
 **Observed by:** <instance> (YYYY-MM-DD)
 ```
+
+The `**Evidence:**` line names where the learning happened: the commit, issue or pull request.
+Without it, a later reader cannot check whether the rule is still true or where it came from.
 
 ### Confirmation Status
 

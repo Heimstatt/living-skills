@@ -239,5 +239,6 @@ pairing ends with a release recommendation both sides carry.
 
 Write new insights to `living-checklist.md`: every reviewer error class you fell
 for, every dispute and how it resolved, every fix that a later revision refuted.
-Format: date, context, insight, rule. Update `revisionslog.md` if `SKILL.md`
+Format: date, context, insight, rule, evidence (the commit, issue or PR
+where it happened). Update `revisionslog.md` if `SKILL.md`
 itself changed.
