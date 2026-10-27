@@ -35,7 +35,7 @@ Activate this skill when:
 ## Session-Start Ritual
 
 1. Read this `SKILL.md`
-2. Read `living-checklist.md` — load accumulated patterns
+2. Read `living-checklist.md` — seed rules first, then your own entries
 3. Output the Skill Activation Protocol:
 
 ```
@@ -159,5 +159,5 @@ Review is complete when:
 ## Session-End Ritual
 
 After use: write new patterns found into `living-checklist.md`.
-Format: Date, context/system type, pattern found, why it happened, concrete check for next session.
+Format: Date, context/system type, pattern found, why it happened, concrete check for next session, evidence (commit, issue or PR where it happened). Use the Entry Format defined there; revise a seed rule only when an entry contradicts or sharpens it.
 Update `revisionslog.md` only if `SKILL.md` itself was changed.

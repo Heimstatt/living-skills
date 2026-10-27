@@ -29,7 +29,7 @@ metadata:
 ## Session-Start Ritual
 
 1. Read this `SKILL.md`
-2. Read `living-checklist.md` — load accumulated patterns
+2. Read `living-checklist.md` — seed rules first, then your own entries
 3. Output the Skill Activation Protocol:
 
 ```
@@ -211,5 +211,5 @@ Business analysis is ready for handoff when:
 ## Session-End Ritual
 
 After use: write patterns from this session into `living-checklist.md`.
-Format: Date, context type (what kind of domain/project), pattern found, why it happened, rule for next session.
+Format: Date, context type (what kind of domain/project), pattern found, why it happened, rule for next session, evidence (commit, issue or PR where it happened). Use the Entry Format defined there; revise a seed rule only when an entry contradicts or sharpens it.
 Update `revisionslog.md` only if `SKILL.md` itself was changed.

@@ -115,6 +115,7 @@ Format:
 **Insight:** [What was learned]
 **Why it matters:** [Context]
 **Rule:** [Concrete heuristic for the next session]
+**Evidence:** [commit, issue or PR where this happened — required for every new entry]
 
 ## Entries
 
@@ -145,6 +146,16 @@ These are two fundamentally different types of knowledge and must not be conflat
 - Do NOT archive because "it hasn't triggered recently" — that may be exactly because
   the checklist is working as intended
 
+**Cleanup round (c)** — keeps a growing checklist loadable:
+- When: monthly per checklist.
+- At most 20 candidates per round, proposed by one instance in a separate proposal file.
+- A second instance (or person) confirms or rejects each candidate individually. Unconfirmed = stays.
+- Only reasons (b) count. "Too long" or "rarely used" are not reasons.
+- Candidates are **moved unchanged into `## Archive`**, never deleted or rewritten. Each gets
+  one line above it:
+  `> Archived YYYY-MM-DD · Why: … · Replacement: <entry/path or "none"> · Review again: <date or trigger>`
+- One line in `revisionslog.md` per round (count, proposer, confirmer, proposal file).
+
 **SKILL.md is updated only when the method itself needs revision** — not because
 application experience accumulated. New application insights always go to the checklist.
 
@@ -162,7 +173,7 @@ application experience accumulated. New application insights always go to the ch
 
 **Every Living Skill ends with:**
 > After completing the task: write new insights, pitfalls or patterns to
-> `living-checklist.md`. Format: date, context, insight, rule.
+> `living-checklist.md`. Format: date, context, insight, rule, evidence.
 > Update `revisionslog.md` if `SKILL.md` was changed.
 
 ### Step 6 — Git commit
@@ -226,6 +237,9 @@ This output is mandatory. The verbatim quote proves the checklist was read — "
 Only create if the static part of the skill should also be used in claude.ai.
 Limitation: no filesystem access → no living-checklist mechanism → static use only.
 
+Keep the package **outside** the skills directories; otherwise skill discovery or a
+skill-linking script picks it up as a second skill with the same triggers.
+
 ```bash
 mkdir -p cowork/<skill-name>
 cp SKILL.md cowork/<skill-name>/
@@ -236,5 +250,5 @@ cd cowork && zip <skill-name>.zip <skill-name>/SKILL.md
 
 ## Related skills
 
-→ `Team Memory/skills/advocatus-diaboli/` — reference implementation (behavioral skill)
-→ `Infrastructure/skills/home-assistant/` — reference implementation (domain skill)
+→ [`advocatus-diaboli`](../advocatus-diaboli/SKILL.md) — reference implementation (behavioral skill)
+→ [`home-assistant`](../home-assistant/SKILL.md) — reference implementation (domain skill)

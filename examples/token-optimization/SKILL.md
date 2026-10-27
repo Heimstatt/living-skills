@@ -18,7 +18,7 @@ metadata:
 
 ## Session Start
 
-1. Read `living-checklist.md` — load accumulated patterns from prior sessions
+1. Read `living-checklist.md` — seed rules first, then the newest entries
 2. Output the Skill Activation Protocol:
 
 ```
@@ -41,7 +41,7 @@ Approach: [2–3 sentences on token strategy for this specific session]
 - Estimated consumption: `Low 10–15K` / `Med 15–35K` / `High 25–50K`
 - Overflow plan if >80% context used:
   - [ ] Compress old context (which parts? how aggressively?)
-  - [ ] Reference external resources instead of loading into context
+  - [ ] Reference external resources instead of loading into context (living checklist, docs, files in version control)
   - [ ] Spawn sub-agent with isolated context
   - [ ] Abort and restart with compressed context
 
@@ -115,6 +115,7 @@ Selected mode: ___
 **Input/Memory compression (check before long sessions):**
 - [ ] Context files too large? (CLAUDE.md, config, project notes — compress prose, keep code/URLs/tables)
 - [ ] Living checklist too long? (>50 entries → archive old ones; compress prose into rules)
+- [ ] Large context files reduced? (load only the relevant sections)
 
 ---
 
@@ -140,6 +141,16 @@ Selected mode: ___
 - **Output mode:** Did caveman affect quality? Optimal level for this task type?
 - **Tool selection:** What could have been skipped?
 - **Rule:** (1–2 sentence actionable guideline for next similar task)
+- **Evidence:** commit, issue or PR where it happened
+
+**Example entry for `living-checklist.md`:**
+```
+### YYYY-MM-DD — Research task with an Explore agent
+**Learning:** An Explore agent paid off for a search spanning more than three file paths — the main session context stayed focused.
+**Why it matters:** The main session stays on task; the Explore agent works in an isolated context.
+**Rule:** Spawn an Explore agent when the search space is unclear or more than three files are likely involved.
+**Evidence:** <commit, issue or PR>
+```
 
 ---
 
@@ -149,9 +160,9 @@ Selected mode: ___
 
 | Task type | Baseline | + Knowledge reuse | + Sub-agents | + Caveman Lite |
 |-----------|----------|-------------------|--------------|----------------|
-| Routine | 10–15K | 8–12K | N/A | ~7–10K |
-| Research | 15–35K | 12–25K | 8–12K | ~6–9K |
-| Multi-source | 25–50K | 18–35K | 12–20K | ~10–18K |
+| Routine maintenance | 10–15K | 8–12K | N/A | ~7–10K |
+| Research / adversarial review | 15–35K | 12–25K | 8–12K | ~6–9K |
+| Multi-source / agent orchestration | 25–50K | 18–35K | 12–20K | ~10–18K |
 | Multi-tool workflows | +10K/tool | −30%/tool | −80%/tool | — |
 
 **Caveman benchmarks** (from [juliusbrussee/caveman](https://github.com/juliusbrussee/caveman)):
@@ -165,4 +176,4 @@ Selected mode: ___
 
 ## Session End
 
-After every session: write new learnings to `living-checklist.md` — what was discovered, why it matters, one concrete rule for next time.
+After every session: write new learnings to `living-checklist.md` — what was discovered, why it matters, one concrete rule for next time, and the evidence (commit, issue or PR) where it happened.

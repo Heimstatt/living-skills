@@ -10,7 +10,24 @@ metadata:
 
 *Example skill, published as a template. Adapt the procedure to your own team and practice.*
 
-**Trigger:** "advocatus diaboli" / "devil's advocate" / "review critically" / "tear this apart"
+**Trigger:** "advocatus diaboli" / "devil's advocate" / "review critically" / "challenge this" / "tear this apart"
+
+---
+
+## Two Modes
+
+### Mode A: Full iteration (with filesystem access)
+- Minimum 2, maximum 4 adversarial review iterations
+- New patterns written back to `living-checklist.md` after each session
+- The skill improves with each use
+- Intermediate states are written down explicitly, so a long review does not depend on the context window
+
+### Mode B: Single iteration (stateless environments)
+- One adversarial review plus one revision
+- No checklist read or write-back, so no learning across sessions
+- Fine for quick sessions, not for complex analyses; say in the output that Mode B was used
+
+The rest of this file describes Mode A.
 
 ---
 
@@ -24,9 +41,11 @@ SKILL ACTIVATED: advocatus-diaboli
 Date: YYYY-MM-DD
 Checklist read: Yes — [N] active entries, newest: [date of most recent entry]
 Active rule: "[verbatim quote of the most recent relevant rule]"
+Approach: [2–3 sentences on what this review will do in this session]
 ```
 
-3. Apply relevant checklist entries as additional review criteria in Step 2
+   This output is mandatory. Without it the session ritual is incomplete.
+3. Apply relevant checklist entries (seed rules included) as additional review criteria in Step 2
 
 ## Process
 
@@ -74,6 +93,9 @@ Revise the analysis. Append a revision log.
 
 ### Step 5 — Repeat until stop criterion met
 
+### Step 6 — Update the living checklist
+After the final iteration, run Session End below.
+
 ## Stop Criteria
 
 | Category | Threshold |
@@ -91,7 +113,8 @@ Revise the analysis. Append a revision log.
 After the final iteration:
 
 1. Identify new patterns: What was systematically missed? Why?
-2. Write entries to `living-checklist.md` using the format below
+2. Write entries to `living-checklist.md` using the format below — only patterns that would go
+   wrong again without the reminder, in generic terms (no project names, no case data)
 3. Git commit: `<Instance>: advocatus-diaboli — <what was reviewed> [YYYY-MM-DD]`
 
 **Entry format:**
