@@ -8,7 +8,7 @@ metadata:
 
 # Playwright — Operational Skill
 
-**Knowledge checked:** <date>, against playwright-cli <version>
+**Knowledge checked:** <date>, against playwright-cli <version> or the Playwright library <version>, per machine (which mode exists can differ between machines)
 
 **Applies to:** All instances with local `npx` and browser access
 **Trigger:** "playwright" / "inspect live" / "automate browser" / "validate screenshot" / "visually check page"
@@ -39,12 +39,21 @@ command -v npx >/dev/null 2>&1
 
 If `npx` is missing, do not attempt browser automation. Ask the user for Node/npm.
 
-Wrapper:
+Then check which of two modes this machine actually has — do not assume the wrapper exists because another machine has it:
+
+**CLI mode** (playwright-cli wrapper):
 
 ```bash
 export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
 export PWCLI="$CODEX_HOME/skills/playwright/scripts/playwright_cli.sh"
+[ -x "$PWCLI" ] && echo "CLI mode available"
 ```
+
+**Library mode** (no wrapper): use Playwright as a Node library from a dedicated directory
+(`npm install playwright`, then `npx playwright install chromium`) and run scripts with
+`node script.js` using `require('playwright')`, headless Chromium by default.
+
+If neither mode works, say so; do not fall back to guessing what the page shows.
 
 ---
 
@@ -56,12 +65,25 @@ export PWCLI="$CODEX_HOME/skills/playwright/scripts/playwright_cli.sh"
 4. After navigation or DOM changes: take another `snapshot`
 5. Save screenshots to `output/playwright/` when visual comparison is relevant
 
-Minimal:
+Minimal (CLI mode):
 
 ```bash
 "$PWCLI" open https://example.com --headed
 "$PWCLI" snapshot
 "$PWCLI" screenshot
+```
+
+Minimal (library mode):
+
+```js
+const { chromium } = require('playwright');
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto('https://example.com');
+  await page.screenshot({ path: 'output/playwright/example.png' });
+  await browser.close();
+})();
 ```
 
 ---
@@ -86,4 +108,5 @@ Format:
 **Pattern found:** [What went wrong or was surprising]
 **Why overlooked:** [Structural reason]
 **Check:** [Concrete question for future sessions]
+**Evidence:** [commit, issue or PR where it happened]
 ```

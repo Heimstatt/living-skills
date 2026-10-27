@@ -136,7 +136,7 @@ Done when **all** hold:
 ## Session End
 
 1. New patterns into `living-checklist.md` in the format required by `framework.md` §3
-   (`unconfirmed` marker, `Observed by:`).
+   (`unconfirmed` marker, `Evidence:`, `Observed by:`).
 2. Update `revisionslog.md` only if this `SKILL.md` itself changed.
 3. Commit.
 
@@ -157,9 +157,11 @@ If none of these change over several sessions, the skill is decoration. Say so a
 
 ## Related skills
 
-→ `Team Memory/skills/token-optimization/` — activate first; scope discipline and context
+→ [`token-optimization`](../token-optimization/SKILL.md) — activate first; scope discipline and context
   budget are the same decision made twice
-→ `Team Memory/skills/advocatus-diaboli/` — use on the scope contract when the request
+→ [`pair-review`](../pair-review/SKILL.md) — the reviewer checks the diff audit; an unexplained
+  hunk is a valid finding
+→ [`advocatus-diaboli`](../advocatus-diaboli/SKILL.md) — use on the scope contract when the request
   itself looks wrong, not just its implementation
 
 ---

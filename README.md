@@ -465,16 +465,22 @@ and is small enough to read in one sitting.
 The behavioral examples are transferable across domains. The domain example shows
 how the same Skill format is used for system-specific knowledge.
 
-The examples are **templates**. Every `living-checklist.md` entry is **illustrative** —
-written to show the format, dated `YYYY-MM-DD` and marked `*illustrative*`, not a real
-observation. Revision logs start at a single template row. Replace both with your own
-entries as soon as you apply a skill in your own work.
+The examples are **templates**. The software-related skills (`surgical-changes`, `pair-review`,
+`business-analysis`, `secure-architecture`, `advocatus-diaboli`, `token-optimization`,
+`skill-creator`, `playwright`) ship with **seed rules** in their `living-checklist.md`:
+generalised rules distilled from long use, marked `*seed rule*`, with no incidents, names or
+systems. The other examples carry **illustrative** entries — written to show the format, dated
+`YYYY-MM-DD` and marked `*illustrative*`, not a real observation. Revision logs start at a single
+template row. Add your own entries as soon as you apply a skill in your own work.
 
 ---
 
 ## Getting Started
 
 See [`setup/quickstart.md`](setup/quickstart.md) to get started in 10 minutes.
+
+For a software or DevOps team that wants only the development skills, see
+[`setup/dev-team.md`](setup/dev-team.md).
 
 For teams that organise many skills into departments and roles, see
 [`framework-organisation.md`](framework-organisation.md).
